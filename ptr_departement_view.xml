@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="ptr_departement_form_view" model="ir.ui.view">
+            <field name="name">ptr.departement.form</field>
+            <field name="model">ptr.departement</field>
+            <field name="arch" type="xml">
+                <form string="Departement" version="7.0">
+					<sheet>
+						<notebook >
+							<page string="Departement">
+								<group>
+									<field name="name"/>
+									<field name="code"/>
+									<field name="adresse"/>
+									<field name="fixe"/>
+									<field name="faxe"/>
+									<field name="responsable"/>
+								</group>
+								<group string="Etablissement">
+									<field name="id_etablissement"/>
+								</group>
+								<group>
+									<field name="local_ids"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+		
+		<record model="ir.ui.view" id="ptr.departement_tree">
+            <field name="name">ptr.departement.tree</field>
+            <field name="model">ptr.departement</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="liste departement">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="adresse"/>
+                    <field name="fixe"/>
+                    <field name="faxe"/>
+					<field name="responsable"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_departement_seq">
+            <field name="name">action departement</field>
+            <field name="res_model">ptr.departement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+       <menuitem name="Departement" id="section_main_menu_departement" parent="main_menu_etablissement" />
+        <menuitem name="Sous-menu departement" id="real_menu_departement" parent="section_main_menu_departement" action="action_departement_seq"/>
+
+    </data>
+</openerp>

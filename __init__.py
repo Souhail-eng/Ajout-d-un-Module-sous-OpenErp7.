@@ -1,0 +1,7 @@
+import ptr_etablissement
+import ptr_inv
+import ptr_categoriepersonnel
+import ptr_departement
+import ptr_local
+import ptr_typeptrgeo
+import ptr_responsable

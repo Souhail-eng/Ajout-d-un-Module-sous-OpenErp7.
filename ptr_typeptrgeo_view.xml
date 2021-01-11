@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="ptr_typeptrgeo_form_view" model="ir.ui.view">
+			<field name="name">ptr.typeptrgeo.form</field>
+			<field name="model">ptr.typeptrgeo</field>
+			<field name="arch" type="xml">
+				<form string="typeptrgeo" version="7.0">
+					<sheet>
+						<notebook>
+							<page string="typeptrgeo">
+								<group>
+									<field name="code"/>
+									<field name="libelle"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="ptr.typeptrgeo_tree" model="ir.ui.view">
+			<field name="name">ptr.typeptrgeo.tree</field>
+			<field name="model">ptr.typeptrgeo</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Infos typeptrgeo">
+					<field name="code" />
+					<field name="libelle" />
+				</tree>
+			</field>
+		</record>
+		
+		<record id="action_typeptrgeo_seq" model="ir.actions.act_window">
+			<field name="name">typeptrgeo</field>
+			<field name="res_model">ptr.typeptrgeo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+		
+		<menuitem name="typeptrgeo" id="section_menu_typeptrgeo" parent="main_menu_etablissement" />
+		<menuitem name="sous menu typeptrgeo" id="real_menu_typeptrgeo" parent="section_menu_typeptrgeo" action="action_typeptrgeo_seq"/>
+	
+	</data>
+</openerp>

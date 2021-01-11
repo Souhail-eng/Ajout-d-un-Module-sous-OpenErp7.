@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="ptr_local_form_view" model="ir.ui.view">
+			<field name="name">ptr.local.form</field>
+			<field name="model">ptr.local</field>
+			<field name="arch" type="xml">
+				<form string="local" version="7.0">
+					<sheet>
+						<notebook>
+							<page string="local">
+								<group>
+									<field name="code"/>
+									<field name="designation"/>
+									<field name="crocquis"/>
+									<field name="superficie"/>
+									<field name="capacite_acceuil"/>
+									<field name="fiche_immeuble"/>
+									<field name="ficheetage"/>
+									<field name="fichelocal"/>
+								</group>
+								<group string="Departement">
+									<field name="departement"/>
+								</group>
+								<group string="Responsable">
+									<field name="responsable"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="ptr.local_tree" model="ir.ui.view">
+			<field name="name">ptr.local.tree</field>
+			<field name="model">ptr.local</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Infos local">
+					<field name="code"/>
+					<field name="designation"/>
+					<field name="crocquis"/>
+					<field name="superficie"/>
+					<field name="capacite_acceuil"/>
+					<field name="fiche_immeuble"/>
+					<field name="ficheetage"/>
+					<field name="fichelocal"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="action_local_seq" model="ir.actions.act_window">
+			<field name="name">local</field>
+			<field name="res_model">ptr.local</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+		
+		<menuitem name="local" id="section_menu_local" parent="main_menu_etablissement" />
+		<menuitem name="sous menu local" id="real_menu_local" parent="section_menu_local" action="action_local_seq"/>
+	
+	</data>
+</openerp>
